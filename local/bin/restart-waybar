@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if pgrep -x waybar > /dev/null; then
+    echo "Waybar is running. Restarting..."
+    pkill waybar
+    sleep 1
+else
+    echo "Waybar is not running. Starting..."
+fi
+
+waybar &
